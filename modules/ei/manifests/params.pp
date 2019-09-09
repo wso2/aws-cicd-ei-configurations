@@ -102,7 +102,7 @@ class ei::params {
   $aws_secret_key = 'SECRET_KEY'
   $aws_region = 'REGION_NAME'
   $local_member_host = 'LOCAL-MEMBER-HOST'
-  $aws_security_group='SECURITY_GROUP'
+  $aws_security_group='WSO2SecurityGroup'
   $aws_tag_key='cluster'
   $aws_tag_key='ei'
 
