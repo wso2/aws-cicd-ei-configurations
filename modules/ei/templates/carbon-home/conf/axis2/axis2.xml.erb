@@ -519,10 +519,10 @@
 
         <parameter name="accessKey"><%= @aws_access_key %></parameter>
         <parameter name="secretKey"><%= @aws_secret_key %></parameter>
-        <parameter name="securityGroup">WSO2SecurityGroup</parameter>
+        <parameter name="securityGroup"><%= @aws_security_group %></parameter>
         <parameter name="region"><%= @aws_region %></parameter>
-        <parameter name="tagKey">cluster</parameter>
-        <parameter name="tagValue">ei</parameter>
+        <parameter name="tagKey"><%= @aws_tag_key %></parameter>
+        <parameter name="tagValue"><%= @aws_tag_value %></parameter>
 
 
 	<!--<parameter name="licenseKey">xxx</parameter>-->
@@ -568,7 +568,7 @@
         The TCP port used by this member. This is the port through which other nodes will
         contact this member
          -->
-        <parameter name="localMemberPort">4100</parameter>
+        <parameter name="localMemberPort">5701</parameter>
 
         <!--
             The bind port of this member. The difference between localMemberPort & localMemberBindPort
