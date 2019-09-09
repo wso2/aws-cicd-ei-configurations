@@ -23,22 +23,17 @@ class ei::params {
   $user_home = '/home/$user'
   $user_group_id = 802
   $hostname = 'ALB_DNS_NAME'
-  $mgt_hostname = 'ALB_DNS_NAME'
   $jdk_version = 'JDK_TYPE'
-  $aws_access_key = 'ACCESS_KEY'
-  $aws_secret_key = 'SECRET_KEY'
-  $aws_region = 'REGION_NAME'
-  $local_member_host = 'LOCAL-MEMBER-HOST'
   $http_proxy_port = '80'
   $https_proxy_port = '443'
   $product = 'wso2ei'
   $product_version = '6.5.0'
   $profile = 'integrator'
   $service_name = "${product}-${profile}"
-  # $ei_analytics = 'CF_ANALYTICS_IP'
+  $ei_analytics = 'CF_ANALYTICS_IP'
   $ei_analytics = 'localhost'
   $mediation_flow_statistics = 'false'
-  # $broker_elb_dns_name  = 'BROKER_ELB_DNS_NAME'
+  $broker_elb_dns_name  = 'BROKER_ELB_DNS_NAME'
   $broker_elb_dns_name = 'localhost'
   $ei_package = '$product-$product_version.zip'
   $wso2_path="/var/lib/jenkins/workspace/$product-$product_version/${module_name}"
@@ -51,7 +46,6 @@ class ei::params {
     'conf/carbon.xml',
     'conf/axis2/axis2.xml',
     'conf/user-mgt.xml',
-    'conf/registry.xml',
     'conf/tomcat/catalina-server.xml',
     'conf/synapse.properties',
     'conf/jndi.properties',
@@ -103,6 +97,14 @@ class ei::params {
   $transport_sender_trust_store_location = 'repository/resources/security/client-truststore.jks'
   $transport_sender_trust_store_type = 'JKS'
   $transport_sender_trust_store_password = 'wso2carbon'
+
+  $aws_access_key = 'ACCESS_KEY'
+  $aws_secret_key = 'SECRET_KEY'
+  $aws_region = 'REGION_NAME'
+  $local_member_host = 'LOCAL-MEMBER-HOST'
+  $aws_security_group='SECURITY_GROUP'
+  $aws_tag_key='cluster'
+  $aws_tag_key='ei'
 
   # user-mgt.xml
   $admin_username = 'admin'
