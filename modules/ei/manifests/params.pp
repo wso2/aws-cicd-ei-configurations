@@ -30,10 +30,8 @@ class ei::params {
   $product_version = '6.5.0'
   $profile = 'integrator'
   $service_name = "${product}-${profile}"
-  $ei_analytics = 'CF_ANALYTICS_IP'
   $ei_analytics = 'localhost'
   $mediation_flow_statistics = 'false'
-  $broker_elb_dns_name  = 'BROKER_ELB_DNS_NAME'
   $broker_elb_dns_name = 'localhost'
   $ei_package = '$product-$product_version.zip'
   $wso2_path="/var/lib/jenkins/workspace/$product-$product_version/${module_name}"
