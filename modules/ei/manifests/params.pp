@@ -102,7 +102,7 @@ class ei::params {
   $local_member_host = 'LOCAL-MEMBER-HOST'
   $aws_security_group='WSO2SecurityGroup'
   $aws_tag_key='cluster'
-  $aws_tag_key='ei'
+  $aws_tag_value='ei'
 
   # user-mgt.xml
   $admin_username = 'admin'
