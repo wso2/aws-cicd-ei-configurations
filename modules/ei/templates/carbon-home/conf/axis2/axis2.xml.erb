@@ -493,14 +493,12 @@
      -->
     <clustering class="org.wso2.carbon.core.clustering.hazelcast.HazelcastClusteringAgent"
                 enable="true">
-
         <!--
            This parameter indicates whether the cluster has to be automatically initalized
            when the AxisConfiguration is built. If set to "true" the initialization will not be
            done at that stage, and some other party will have to explictly initialize the cluster.
         -->
         <parameter name="AvoidInitiation">true</parameter>
-
         <!--
            The membership scheme used in this setup. The only values supported at the moment are
            "multicast" and "wka"
@@ -516,7 +514,6 @@
         -->
         <parameter name="membershipScheme">aws</parameter>
 
-
         <parameter name="accessKey"><%= @aws_access_key %></parameter>
         <parameter name="secretKey"><%= @aws_secret_key %></parameter>
         <parameter name="securityGroup"><%= @aws_security_group %></parameter>
@@ -524,15 +521,35 @@
         <parameter name="tagKey"><%= @aws_tag_key %></parameter>
         <parameter name="tagValue"><%= @aws_tag_value %></parameter>
 
-
-	<!--<parameter name="licenseKey">xxx</parameter>-->
-        <!--<parameter name="mgtCenterURL">http://localhost:8081/mancenter/</parameter>-->
-
         <!--
          The clustering domain/group. Nodes in the same group will belong to the same multicast
          domain. There will not be interference between nodes in different groups.
         -->
         <parameter name="domain">wso2.carbon.domain</parameter>
+
+        <!-- The host name or IP address of this member -->
+        <parameter name="localMemberHost"><%= @local_member_host %></parameter>
+
+        <!--
+        The TCP port used by this member. This is the port through which other nodes will
+        contact this member
+         -->
+        <parameter name="localMemberPort">5701</parameter>
+
+        <!--Properties specific to this member-->
+        <parameter name="properties">
+            <property name="backendServerURL" value="https://${hostName}:${httpsPort}/services/"/>
+            <property name="mgtConsoleURL" value="https://${hostName}:${httpsPort}/"/>
+            <!-- Worker Setup-->
+            <property name="subDomain" value="worker"/>
+ 	          <!-- Manger Setup with Port Mapping-->
+	          <!--property name="port.mapping.8280" value="9764"/>
+            <property name="port.mapping.8243" value="9444"/>
+            <property name="subDomain" value="mgt"/>-->
+        </parameter>
+
+	      <!--<parameter name="licenseKey">xxx</parameter>-->
+        <!--<parameter name="mgtCenterURL">http://localhost:8081/mancenter/</parameter>-->
 
         <!-- The multicast address to be used -->
         <!--<parameter name="mcastAddress">228.0.0.4</parameter>-->
@@ -551,10 +568,6 @@
         <!--
             <parameter name="mcastBindAddress">127.0.0.1</parameter>
         -->
-        <!-- The host name or IP address of this member -->
-
-        <parameter name="localMemberHost"><%= @local_member_host %></parameter>
-
         <!--
             The bind adress of this member. The difference between localMemberHost & localMemberBindAddress
             is that localMemberHost is the one that is advertised by this member, while localMemberBindAddress
@@ -563,13 +576,6 @@
         <!--
         <parameter name="localMemberBindAddress">127.0.0.1</parameter>
         -->
-
-        <!--
-        The TCP port used by this member. This is the port through which other nodes will
-        contact this member
-         -->
-        <parameter name="localMemberPort">5701</parameter>
-
         <!--
             The bind port of this member. The difference between localMemberPort & localMemberBindPort
             is that localMemberPort is the one that is advertised by this member, while localMemberBindPort
@@ -578,22 +584,6 @@
         <!--
         <parameter name="localMemberBindPort">4001</parameter>
         -->
-
-        <!--
-        Properties specific to this member
-        -->
-        <parameter name="properties">
-            <property name="backendServerURL" value="https://${hostName}:${httpsPort}/services/"/>
-            <property name="mgtConsoleURL" value="https://${hostName}:${httpsPort}/"/>
- 	    <!-- Manger Setup with Port Mapping-->
-	    <!--property name="port.mapping.8280" value="9764"/>
-            <property name="port.mapping.8243" value="9444"/>
-            <property name="subDomain" value="mgt"/-->
-
-	    <!-- Worker Setup-->
-	    <!--property name="subDomain" value="worker"/-->
-        </parameter>
-
         <!--
            The list of static or well-known members. These entries will only be valid if the
            "membershipScheme" above is set to "wka"
