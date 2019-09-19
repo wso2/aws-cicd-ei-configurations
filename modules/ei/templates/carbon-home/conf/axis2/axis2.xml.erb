@@ -499,6 +499,8 @@
            done at that stage, and some other party will have to explictly initialize the cluster.
         -->
         <parameter name="AvoidInitiation">true</parameter>
+
+        <parameter name="clusteringPattern">nonWorkerManager</parameter>
         <!--
            The membership scheme used in this setup. The only values supported at the moment are
            "multicast" and "wka"
@@ -568,6 +570,8 @@
         <!--
             <parameter name="mcastBindAddress">127.0.0.1</parameter>
         -->
+
+
         <!--
             The bind adress of this member. The difference between localMemberHost & localMemberBindAddress
             is that localMemberHost is the one that is advertised by this member, while localMemberBindAddress
