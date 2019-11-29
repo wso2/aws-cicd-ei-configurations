@@ -98,6 +98,7 @@ class ei::params {
 
   $aws_access_key = 'ACCESS_KEY'
   $aws_secret_key = 'SECRET_KEY'
+  $aws_iam_role = 'IAM_ROLE'
   $aws_region = 'REGION_NAME'
   $local_member_host = 'LOCAL-MEMBER-HOST'
   $aws_security_group='WSO2SecurityGroup'
