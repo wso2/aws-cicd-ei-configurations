@@ -515,9 +515,9 @@
                     Service (GMS) using a TCP ping mechanism.
         -->
         <parameter name="membershipScheme">aws</parameter>
-
-        <parameter name="accessKey"><%= @aws_access_key %></parameter>
-        <parameter name="secretKey"><%= @aws_secret_key %></parameter>
+        <parameter name="iamRole"><%= @aws_iam_role %></parameter>
+<!--        <parameter name="accessKey"><%#= @aws_access_key %></parameter>-->
+<!--        <parameter name="secretKey"><%#= @aws_secret_key %></parameter>-->
         <parameter name="securityGroup"><%= @aws_security_group %></parameter>
         <parameter name="region"><%= @aws_region %></parameter>
         <parameter name="tagKey"><%= @aws_tag_key %></parameter>
