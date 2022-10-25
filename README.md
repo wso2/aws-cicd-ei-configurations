@@ -1,4 +1,8 @@
 # AWS Pipeline Puppet Configurations for Enterprise Integrator Module
+> **Warning**
+>
+>   The CICD pipeline is deprecated.
+>
 
 This repository contains the Puppet configurations WSO2 API Manager modules used in AWS Pipeline.
 
